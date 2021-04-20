@@ -12,7 +12,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
   switch (buttonName) {
     case 'AC':
       total = null;
-      next = '';
+      next = '0';
       operation = null;
       break;
     case '.':
