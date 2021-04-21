@@ -1,28 +1,23 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 import { isBinaryOperation, isOperation, isUnaryOperation } from '../helpers/operation';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: '0',
-      operation: null,
-      showTotal: true,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(buttonName) {
-    const { operation, total, next } = this.state;
+const App = () => {
+  const [state, setState] = useState({
+    total: null,
+    next: '0',
+    operation: null,
+    showTotal: true,
+  });
+  const handleClick = buttonName => {
+    const { operation, total, next } = state;
 
     // if its not an operation then its a number being entered
     if (!isOperation(buttonName)) {
-      this.setState(() => {
+      setState(() => {
         const calculation = calculate({ total, next, operation }, buttonName);
         return ({
           ...calculation,
@@ -30,7 +25,7 @@ class App extends React.Component {
         });
       });
     } else {
-      this.setState(prevState => {
+      setState(prevState => {
         // First input of the calculation
         if (total === null && !isUnaryOperation(buttonName)) {
           return {
@@ -67,19 +62,16 @@ class App extends React.Component {
         });
       });
     }
-  }
-
-  render() {
-    const { showTotal, total, next } = this.state;
-    return (
-      <>
-        <div className="App">
-          <Display result={showTotal ? total || '0' : next} />
-          <ButtonPanel clickHandler={this.handleClick} />
-        </div>
-      </>
-    );
-  }
-}
+  };
+  const { showTotal, total, next } = state;
+  return (
+    <>
+      <div className="App">
+        <Display result={showTotal ? total || '0' : next} />
+        <ButtonPanel clickHandler={handleClick} />
+      </div>
+    </>
+  );
+};
 
 export default App;
