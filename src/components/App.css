@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  max-width: 400px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+.button {
+  height: 3rem;
+  width: 0;
+
+  /* padding: 1rem 1.5rem; */
+  font-size: 1rem;
+  border: none;
+  border-right: 2px solid rgb(192, 192, 192);
+  border-bottom: 2px solid rgb(192, 192, 192);
+  flex-grow: 1;
+  background-color: rgb(224, 224, 224);
+  font-weight: bold;
+  transition: all 50ms ease-in-out;
+}
+
+.button:active {
+  background-color: rgb(196, 196, 196);
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: center;
+}
+
+.fg-2 {
+  flex-grow: 2;
+}
+
+.bg-orange {
+  background-color: rgb(245, 145, 62);
+  transition: all 50ms ease-in-out;
+}
+
+.bg-orange:focus,
+.bg-orange:active {
+  background-color: rgb(245, 111, 2);
+}
+
+.display {
+  background-color: rgb(133, 134, 148);
+  color: white;
+  text-align: right;
+  padding: 0.67rem;
+}
