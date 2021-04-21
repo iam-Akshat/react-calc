@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Display from '../components/Display';
+import Display from '../../components/Display';
 
 describe('Display components', () => {
   test('renders zero when no props are given', () => {

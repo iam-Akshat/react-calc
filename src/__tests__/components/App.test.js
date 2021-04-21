@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from '../components/App';
-import { clickCalcButtonByText, clickCalcButtonByRole } from '../test_helpers/helpers';
+import App from '../../components/App';
+import { clickCalcButtonByText, clickCalcButtonByRole } from '../../test_helpers/helpers';
 
 describe('App', () => {
   test('starts with zero being displayed in calculator display bar', () => {

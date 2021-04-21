@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import ButtonPanel from '../components/ButtonPanel';
+import ButtonPanel from '../../components/ButtonPanel';
 
 describe('ButtonPanel', () => {
   test('renders all buttons', () => {
