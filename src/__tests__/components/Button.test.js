@@ -2,7 +2,7 @@ import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Button from '../../components/Button';
 
-const mockHandler = jest.fn(name => name);
+const mockHandler = jest.fn((name) => name);
 
 describe('Button', () => {
   test('renders a button with given name as prop', () => {
