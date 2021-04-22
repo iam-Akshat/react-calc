@@ -14,6 +14,11 @@
 - Run `npm install` to install all the dependencies
 - Run `npm start`
 
+## Testing
+
+- Uses default create-react-app testing setup
+- tests are present in __tests__ dir in src
+- run `npm test` to run tests
 
 ## Deployment
 

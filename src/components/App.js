@@ -12,7 +12,7 @@ const App = () => {
     operation: null,
     showTotal: true,
   });
-  const handleClick = buttonName => {
+  const handleClick = (buttonName) => {
     const { operation, total, next } = state;
 
     // if its not an operation then its a number being entered
@@ -25,7 +25,7 @@ const App = () => {
         });
       });
     } else {
-      setState(prevState => {
+      setState((prevState) => {
         // First input of the calculation
         if (total === null && !isUnaryOperation(buttonName)) {
           return {
